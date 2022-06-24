@@ -36,4 +36,17 @@ fn main() {
 
     // architecture's default size
     let _y: usize = 10;
+    
+    /* Integer literals */
+    let _dec = 99_222;  // Decimal
+    let _hex = 0xff;    // Hexadecimal
+    let _octal = 0o77;  // Octal
+    let _bin = 0b11;    // Binary
+    let _byte = b'A';   // Byte
+    
+    println!("{}", _dec);
+    println!("{}", _hex);
+    println!("{}", _octal);
+    println!("{}", _bin);
+    println!("{}", _byte);
 }

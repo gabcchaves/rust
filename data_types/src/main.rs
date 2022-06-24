@@ -70,4 +70,11 @@ fn main(){
 
     println!("Floating point numbers");
     print!("{} {} {} {} {} {}\n\n", sum, diff, product, quotient, floored, remainder);
+
+    /* Boolean */
+    let t = true;
+    let f: bool = false;
+
+    println!("Booleans");
+    print!("{} {}\n\n", t, f);
 }

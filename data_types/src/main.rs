@@ -1,4 +1,6 @@
-fn main() {
+use std::io::{self, Write};
+
+fn main(){
     /* Signed integers */
     // 8-bit signed integer
     let _x: i8 = 10;
@@ -44,13 +46,28 @@ fn main() {
     let _bin = 0b11;    // Binary
     let _byte = b'A';   // Byte
     
-    println!("{}", _dec);
-    println!("{}", _hex);
-    println!("{}", _octal);
-    println!("{}", _bin);
-    println!("{}", _byte);
+    println!("Integers");
+    print!("{} {} {} {} {}\n\n", _dec, _hex, _octal, _bin, _byte);
+
+    io::stdout().flush().unwrap();
 
     /* Floating point numbers */
     let _double = 2.0;      // f64
     let _float: f32 = 3.0;  // f32
+    
+    /* Numeric operations */
+    // Addition
+    let sum = 5 + 10;
+    // Subtraction
+    let diff = 95.5 - 4.3;
+    // Multiplication
+    let product = 4 * 30;
+    // Division
+    let quotient = 56.7 / 32.2;
+    let floored = 2 / 3;
+    // Remainder
+    let remainder = 43 % 5;
+
+    println!("Floating point numbers");
+    print!("{} {} {} {} {} {}\n\n", sum, diff, product, quotient, floored, remainder);
 }

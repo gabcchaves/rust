@@ -1,6 +1,7 @@
 use std::io::{self, Write};
 
 fn main(){
+    println!("Data types\n");
     /* Signed integers */
     // 8-bit signed integer
     let _x: i8 = 10;
@@ -77,4 +78,9 @@ fn main(){
 
     println!("Booleans");
     print!("{} {}\n\n", t, f);
+
+    /* Character */
+    let c = 'z';
+    println!("Character");
+    print!("{}\n\n", c);
 }

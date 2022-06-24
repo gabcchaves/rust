@@ -83,4 +83,23 @@ fn main(){
     let c = 'z';
     println!("Character");
     print!("{}\n\n", c);
+
+    /* Compound types */
+    println!("Compound types");
+    println!("Tuple");
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+    let (x, y, z) = tup;
+    println!("{} {} {}", x, y, z);
+    println!("{} {} {}", tup.0, tup.1, tup.2);
+
+    println!("Array");
+    let array = [1, 2, 3, 4, 5];
+    print!("{:?}\n", array);
+    let arrayType: [u8; 5] = [1, 2, 3, 4, 5];
+    print!("{:?}\n", arrayType);
+
+    let arrayFilled = [3; 5];
+    print!("{:?}\n", arrayFilled);
+    print!("{}\n", array[2]);
 }

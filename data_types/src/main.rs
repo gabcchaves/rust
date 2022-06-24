@@ -49,4 +49,8 @@ fn main() {
     println!("{}", _octal);
     println!("{}", _bin);
     println!("{}", _byte);
+
+    /* Floating point numbers */
+    let _double = 2.0;      // f64
+    let _float: f32 = 3.0;  // f32
 }

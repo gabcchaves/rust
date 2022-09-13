@@ -44,7 +44,7 @@ fn contains_subarray<T: PartialEq>(array: &[T], subarray: &[T]) -> bool {
 
     let mut lbound = 0;
     let mut ubound = subarray.len();
-    while lbound <= (array.len() - subarray.len()) - 1 {
+    while ubound <= array.len() {
         if subarray == &array[lbound..ubound] {
             return true;
         }

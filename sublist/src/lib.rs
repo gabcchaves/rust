@@ -23,22 +23,32 @@ pub fn sublist<T: PartialEq>(_first_list: &[T], _second_list: &[T]) -> Compariso
 
     // First list smallest
     if _first_list.len() < _second_list.len() {
-        // Slice the second list to compare with the first
-        let pos_first = _second_list.iter().position(|x| &x == &_first_list.first().unwrap()).unwrap();
-        let pos_last = _second_list.iter().position(|x| &x == &_first_list.last().unwrap()).unwrap();
-        let sublist = &_second_list[pos_first..pos_last + 1];
-
-        if _first_list == sublist { return Comparison::Sublist };
+        if contains_subarray(_second_list, _first_list) {
+            return Comparison::Sublist;
+        }
     }
 
     // Second list smallest
     if _first_list.len() > _second_list.len() {
-        let pos_first = _first_list.iter().position(|x| &x == &_second_list.first().unwrap()).unwrap();
-        let pos_last = _first_list.iter().position(|x| &x == &_second_list.last().unwrap()).unwrap();
-        let sublist = &_first_list[pos_first..pos_last + 1];
-
-        if _second_list == sublist { return Comparison::Superlist };
+        if contains_subarray(_first_list, _second_list) {
+            return Comparison::Superlist;
+        }
     }
 
     return Comparison::Unequal;
+}
+
+fn contains_subarray<T: PartialEq>(array: &[T], subarray: &[T]) -> bool {
+    if array.len() < subarray.len() { return false }
+    if array.len() == subarray.len() { return array == subarray }
+
+    let mut lbound = 0;
+    let ubound = subarray.len();
+    while lbound <= (array.len() - subarray.len()) - 1 {
+        if subarray == &array[lbound..ubound] {
+            return true;
+        }
+        lbound = lbound + 1;
+    }
+    return false;
 }

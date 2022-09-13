@@ -43,12 +43,13 @@ fn contains_subarray<T: PartialEq>(array: &[T], subarray: &[T]) -> bool {
     if array.len() == subarray.len() { return array == subarray }
 
     let mut lbound = 0;
-    let ubound = subarray.len();
+    let mut ubound = subarray.len();
     while lbound <= (array.len() - subarray.len()) - 1 {
         if subarray == &array[lbound..ubound] {
             return true;
         }
         lbound = lbound + 1;
+        ubound = ubound + 1;
     }
     return false;
 }

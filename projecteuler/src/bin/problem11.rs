@@ -22,6 +22,11 @@ fn main() {
         [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
     ];
     let horizontal = scan_horizontally(grid);
+    let vertical = scan_vertically(grid);
+    let diagonal = scan_diagonally(grid);
+    println!("{}", horizontal);
+    println!("{}", vertical);
+    println!("{}", diagonal);
 }
 
 fn scan_horizontally(grid: [[i64; 20]; 20]) -> i64 {
@@ -29,7 +34,7 @@ fn scan_horizontally(grid: [[i64; 20]; 20]) -> i64 {
     for row in grid {
         let mut chunk_lbound = 0;
         let mut chunk_ubound = 3;
-        while chunk_ubound < row.len() {
+        while chunk_ubound < 20 {
             let mut prod: i64 = 1;
             for i in chunk_lbound..=chunk_ubound {
                 prod = prod * row[i];
@@ -44,8 +49,64 @@ fn scan_horizontally(grid: [[i64; 20]; 20]) -> i64 {
     return largest;
 }
 
-//fn scan_vertically(grid: [[i32; 20]; 20]) -> i64 {
-//}
-//
-//fn scan_diagonally(grid: [[i32; 20]; 20]) -> i64 {
-//}
+fn scan_vertically(grid: [[i64; 20]; 20]) -> i64 {
+    let mut largest: i64 = 0;
+    for col in 0..20 {
+        let mut chunk_lbound = 0;
+        let mut chunk_ubound = 3;
+        while chunk_ubound < 20 {
+            let mut prod: i64 = 1;
+            for i in chunk_lbound..=chunk_ubound {
+                prod = prod * grid[i][col];
+            }
+            if prod > largest {
+                largest = prod;
+            }
+            chunk_lbound += 1;
+            chunk_ubound += 1;
+        }
+    }
+    return largest;
+}
+
+fn scan_diagonally(grid: [[i64; 20]; 20]) -> i64 {
+    let mut largest = 0;
+    // Chunks are square
+    let mut chunk_horizontal_lbound = 0;
+    let mut chunk_horizontal_ubound = 3;
+    let mut chunk_vertical_lbound = 0;
+    let mut chunk_vertical_ubound = 3;
+    // Move the scan chunk horizontally
+    while chunk_horizontal_ubound < 20 {
+        // Move the scan chunk vertically
+        while chunk_vertical_ubound < 20 {
+            let mut prod_main_diagonal: i64 = 1;
+            let mut prod_sec_diagonal: i64 = 1;
+
+            // Search main diagonal
+            let mut col = chunk_horizontal_lbound;
+            for j in chunk_vertical_lbound..=chunk_vertical_ubound {
+                prod_main_diagonal *= grid[j][col];
+                col += 1;
+            }
+            
+            // Search secondary diagonal
+            col = chunk_horizontal_ubound;
+            for j in chunk_vertical_lbound..=chunk_vertical_ubound {
+                prod_sec_diagonal *= grid[j][col];
+                col += 1;
+            }
+
+            // Get the max product
+            if prod_main_diagonal.max(prod_sec_diagonal) > largest {
+                largest = prod_main_diagonal.max(prod_sec_diagonal);
+            }
+
+            chunk_vertical_lbound += 1;
+            chunk_vertical_ubound += 1;
+        }
+        chunk_horizontal_lbound += 1;
+        chunk_horizontal_ubound += 1;
+    }
+    return largest;
+}

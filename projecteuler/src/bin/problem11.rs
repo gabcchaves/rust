@@ -24,9 +24,7 @@ fn main() {
     let horizontal = scan_horizontally(grid);
     let vertical = scan_vertically(grid);
     let diagonal = scan_diagonally(grid);
-    println!("{}", horizontal);
-    println!("{}", vertical);
-    println!("{}", diagonal);
+    println!("{}", [horizontal, vertical, diagonal].iter().max().unwrap());
 }
 
 fn scan_horizontally(grid: [[i64; 20]; 20]) -> i64 {
@@ -91,10 +89,10 @@ fn scan_diagonally(grid: [[i64; 20]; 20]) -> i64 {
             }
             
             // Search secondary diagonal
-            col = chunk_horizontal_ubound;
+            col = chunk_horizontal_ubound + 1;
             for j in chunk_vertical_lbound..=chunk_vertical_ubound {
+                col -= 1;
                 prod_sec_diagonal *= grid[j][col];
-                col += 1;
             }
 
             // Get the max product
@@ -107,6 +105,8 @@ fn scan_diagonally(grid: [[i64; 20]; 20]) -> i64 {
         }
         chunk_horizontal_lbound += 1;
         chunk_horizontal_ubound += 1;
+        chunk_vertical_lbound = 0;
+        chunk_vertical_ubound = 3;
     }
     return largest;
 }

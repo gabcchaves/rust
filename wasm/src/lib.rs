@@ -13,4 +13,5 @@ pub fn change_color() {
     let document = window.document().unwrap();
     let html_document = document.dyn_into::<web_sys::Document>().unwrap();
     console::log_1(&JsValue::from_str(&format!("{:?}", html_document.title())));
+    html_document.set_title("New Title :)");
 }

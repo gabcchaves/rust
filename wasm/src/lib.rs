@@ -9,5 +9,7 @@ pub fn log(s: &str) {
 #[wasm_bindgen]
 pub fn change_color() {
     let doc = Document::new().unwrap();
-    Document::query_selector_all(&doc, "body");
+    let body = Document::query_selector_all(&doc, "body").unwrap();
+    let n = body.item(0);
+    console::log_1(&JsValue::from_str(&format!("{:?}", n)));
 }

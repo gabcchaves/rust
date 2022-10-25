@@ -7,6 +7,9 @@
 		<!--<link rel="stylesheet" href="style.css">-->
 	</head>
 	<body>
+		<script>
+			$("body").load("templates/header.html");
+		</script>
 		<script type="module">
 			import init, { log } from "./pkg/wasm.js";
 			init().then(() => {

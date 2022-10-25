@@ -1,4 +1,5 @@
 use wasm_bindgen::prelude::*;
+use wasm_bindgen::JsCast;
 use web_sys::*;
 
 #[wasm_bindgen]
@@ -8,8 +9,8 @@ pub fn log(s: &str) {
 
 #[wasm_bindgen]
 pub fn change_color() {
-    let doc = Document::new().unwrap();
-    let body = Document::query_selector_all(&doc, "body").unwrap();
-    let n = bo1y.item(1);
-    console::log_1(&JsValue::from_str(&format!("{:?}", n)));
+    let window = web_sys::window().unwrap();
+    let document = window.document().unwrap();
+    let html_document = document.dyn_into::<web_sys::Document>().unwrap();
+    console::log_1(&JsValue::from_str(&format!("{:?}", html_document)));
 }

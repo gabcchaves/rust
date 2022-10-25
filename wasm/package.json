@@ -1,0 +1,11 @@
+{
+  "name": "wasm",
+  "version": "1.0.0",
+  "description": "Testing.",
+  "main": "static/index.html",
+  "author": "Gabriel Costa Chaves",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.6.1"
+  }
+}

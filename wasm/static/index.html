@@ -5,10 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Wasm</title>
 		<!--<link rel="stylesheet" href="style.css">-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	</head>
 	<body>
 		<script>
-			$("body").load("templates/header.html");
+			$("body").load("static/templates/header.html");
 		</script>
 		<script type="module">
 			import init, { log } from "./pkg/wasm.js";

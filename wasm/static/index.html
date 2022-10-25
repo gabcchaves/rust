@@ -12,9 +12,10 @@
 			$("body").load("static/templates/header.html");
 		</script>
 		<script type="module">
-			import init, { log } from "./pkg/wasm.js";
+			import init, { log, change_color } from "./pkg/wasm.js";
 			init().then(() => {
 				log("Hi");
+				change_color();
 			});
 		</script>
 	</body>

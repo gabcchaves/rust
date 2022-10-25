@@ -10,6 +10,6 @@ pub fn log(s: &str) {
 pub fn change_color() {
     let doc = Document::new().unwrap();
     let body = Document::query_selector_all(&doc, "body").unwrap();
-    let n = body.item(0);
+    let n = bo1y.item(1);
     console::log_1(&JsValue::from_str(&format!("{:?}", n)));
 }

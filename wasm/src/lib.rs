@@ -3,5 +3,5 @@ use web_sys::*;
 
 #[wasm_bindgen]
 pub fn log(s: &str) {
-    console::log_2(JsValue::from_str(&format!("{}", s)));
+    console::log_1(&JsValue::from_str(&format!("{}", s)));
 }

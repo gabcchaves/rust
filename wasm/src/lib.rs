@@ -1,7 +1,7 @@
 use wasm_bindgen::prelude::*;
-use web_sys::prelude::*;
+use web_sys::*;
 
 #[wasm_bindgen]
 pub fn log(s: &str) {
-    console_log(&format!("{}", s));
+    console::log(&format!("{}", s));
 }

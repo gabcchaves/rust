@@ -5,69 +5,70 @@ enum Msg {
     Register,
 }
 
-pub struct App {
-    section: i8, // 0 -> main; 1: login; 2: register
+
+struct App {
+    section: u8,
 }
-pub struct ReusableHeader;
-pub struct RegisterForm;
-pub struct LoginForm;
+
+struct Header;
+#[derive(PartialEq, Properties)]
+struct HeaderProps {
+    children: Children,
+}
 
 impl Component for App {
     type Message = Msg;
     type Properties = ();
 
-    fn create(ctx: &Context<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         Self {
             section: 0
         }
     }
 
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        html! {
-            <div class={"container"}>
-                <ReusableHeader />
-                if self.section == 1 {
-                    <Login />
-                }
-                // else if self.section = 2 {
-                //     <Register />
-                // }
-            </div>
+    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
+        match msg {
+            Msg::Login => {
+                self.section = 1;
+                true
+            },
+            Msg::Register => {
+                self.section = 2;
+                true
+            }
         }
     }
 
-    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> u8 {
-        match msg {
-            Msg::Login => 1,
-            Msg::Register => 2,
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        let link = ctx.link();
+        html! {
+            <>
+                <Header>
+                    <button onclick={link.callback(|_| Msg::Login)}>{"Login"}</button>
+                    <button onclick={link.callback(|_| Msg::Register)}>{"Register"}</button>
+                </Header>
+                if self.section == 1 {
+                    <h1>{"Tela de LogIn"}</h1>
+                } else if self.section == 2 {
+                    <h1>{"Tela de Cadastro"}</h1>
+                }
+            </>
         }
     }
 }
 
-impl Component for ReusableHeader {
-    type Message = Msg;
-    type Properties = ();
+impl Component for Header {
+    type Message = ();
+    type Properties = HeaderProps;
 
-    fn create(ctx: &Context<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         Self
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let onclick = ctx.link().callback(|_| Msg::Login);
         html! {
-            <header class={"main-header"}> 
-                <div class={"logo-area"}>
-                    <h1>{"Compraqui"}</h1>
-                </div>
-
-                <div class={"search-area"}>
-                    <input type={"text"} placeholder={"Pesquisar por produtos"}/>
-                    <input type={"submit"} value={"Pesquisar"}/>
-                </div>
-
-                <div class={"log-options"}>
-                    <button {onclick}>{"LogIn"}</button>
-                </div>
+            <header>
+                { ctx.props().children.clone() }
             </header>
         }
     }

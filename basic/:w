@@ -1,0 +1,14 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+    let l1: i32;
+    let l2: i32;
+
+    io::stdin().read_line(&mut input).expect("Error reading STDIN.");
+    l1 = input.parse().expect("Error converting String to i32.");
+    io::stdin().read_line(&mut input).expect("Error reading STDIN.");
+    l2 = input.parse().expect("Error converting String to i32.");
+
+    println!("{}", l1 * l2);
+}

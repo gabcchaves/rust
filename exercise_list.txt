@@ -1,0 +1,75 @@
+1. Write a program that takes a user's input and prints it back to the console.
+2. Write a program that calculates the factorial of a number.
+3. Write a program that converts Fahrenheit to Celsius.
+4. Write a program that prints the nth fibonacci number.
+5. Write a program that prints all the odd numbers from 1 to 100.
+6. Write a program that calculates the average of a list of numbers.
+7. Write a program that converts a string to uppercase.
+8. Write a program that calculates the area of a rectangle.
+9. Write a program that calculates the factorial of a number using recursion.
+10. Write a program that finds the largest number in a list of numbers.
+11. Write a program that calculates the sum of the squares of the first n natural numbers.
+12. Write a program that takes a list of numbers and returns only the even numbers.
+13. Write a program that calculates the square root of a number.
+14. Write a program that calculates the sum of the first n natural numbers.
+15. Write a program that calculates the power of a number.
+16. Write a program that takes a string and returns the number of vowels in it.
+17. Write a program that calculates the sum of the digits of a number.
+18. Write a program that calculates the GCD of two numbers.
+19. Write a program that calculates the LCM of two numbers.
+20. Write a program that reverses a string.
+
+1. Write a program that asks the user for their age and then prints "You are a
+minor." if they are under 18 years old, or "You are an adult." if they are 18
+or older.
+2. Write a program that takes in a number from the user and prints "The number
+is even." if the number is even, or "The number is odd." if the number is odd.
+3. Write a program that asks the user for a temperature in Celsius and converts
+it to Fahrenheit. Use the formula F = (C * 9/5) + 32.
+4. Write a program that asks the user for a number, and then prints all the
+numbers from 1 to that number.
+5. Write a program that takes in two numbers from the user and prints the
+larger of the two.
+6. Write a program that takes in a number and prints the multiplication table
+of that number.
+7. Write a program that takes in a number from the user and prints "The number
+is positive." if the number is positive, "The number is negative." if the
+number is negative, or "The number is zero." if the number is zero.
+8. Write a program that asks the user for their grade and prints "You passed!"
+if their grade is 60 or higher, or "You failed." if their grade is below 60.
+9. Write a program that takes in a number and checks if it is a prime number or
+not.
+10. Write a program that takes in two numbers and prints the greatest common
+divisor between them.
+11. Write a program that takes in a number from the user and calculates the factorial of that number.
+12. Write a program that asks the user for the height and base of a triangle and calculates its area.
+13. Write a program that asks the user for a number and then prints the Fibonacci sequence up to that number.
+14. Write a program that takes in a number from the user and calculates the sum of all the natural numbers up to that number.
+15. Write a program that takes in two numbers from the user and checks if the second number is divisible by the first number.
+16. Write a program that takes in a number and checks if it is a palindrome or not.
+17. Write a program that takes in a number from the user and calculates its square root.
+18. Write a program that takes in a number from the user and calculates the sum of the digits of that number.
+19. Write a program that takes in a number and checks if it is an armstrong number or not.
+20. Write a program that takes in two numbers from the user and calculates the LCM (Least Common Multiple) of the two numbers.
+
+
+1. Write a function that takes two integers as arguments and returns their sum.
+2. Write a function that takes two strings as arguments and returns their concatenation.
+3. Write a function that takes a vector of integers and returns the largest number in the vector.
+4. Write a function that takes a string and returns the number of vowels in the string.
+5. Write a function that takes a list of strings and returns a vector of the lengths of each string.
+6. Write a function that takes a vector of floating point numbers and returns the average of all numbers.
+7. Write a function that takes a string and returns a string with all the vowels removed.
+8. Write a function that takes an integer and returns true if it is a prime number, false otherwise.
+9. Write a function that takes a vector of integers and returns a new vector with only the even numbers.
+10. Write a function that takes two strings and returns true if one is a permutation of the other, false otherwise.
+11. Write a function that takes a string and returns a string with each word reversed.
+12. Write a function that takes a vector of integers and returns a new vector with the numbers in reverse order.
+13. Write a function that takes a string and returns the number of times a certain character appears in the string.
+14. Write a function that takes a list of strings and returns a new list with the strings sorted in lexicographical order.
+15. Write a function that takes a vector of floating point numbers and returns the median value.
+16. Write a function that takes a vector of integers and returns a string with the numbers separated by a comma.
+17. Write a function that takes a string and returns a string with all the whitespaces removed.
+18. Write a function that takes a vector of integers and returns the mode (most frequently occurring number).
+19. Write a function that takes a string and returns a string with all the characters in upper case.
+20. Write a function that takes two strings and returns the length of the longest common subsequence.

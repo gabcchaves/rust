@@ -1,21 +1,29 @@
-use std::convert::{From, Into, AsRef};
+use std::convert::{TryInto};
+use std::ops::{Add, Div};
 
-fn comp_median<T>(floats: Vec<T>) -> f32
-where T: Into<f32> + std::ops::Add<Output=T> + Copy + std::cmp::Ord
+fn comp_median<T>(v: Vec<T>) -> Result<f64, String>
+where
+    T: TryInto<f64> + Copy,
+    f64: Div<Output = f64> + Add<Output = f64>,
 {
-    let ordered_floats = floats.sort();
-    let median: f32;
+    let median: f64;
 
-    if floats.len() % 2 == 0 {
-        let middle_indexes = [floats.len() / 2 - 1, floats.len() / 2];
-        median = (middle_indexes[0] as f32 + middle_indexes[1] as f32) / 2 as f32;
+    if v.len() % 2 == 0 {
+        let mi = v.len() / 2 as usize;
+        let a = v[mi-1].try_into().map_err(|_| "Error converting to f64.")?;
+        let b = v[mi].try_into().map_err(|_| "Error converting to f64.")?;
+        if ((a + b) / 2.0) == ((a + b) / 2.0).trunc() {
+            median = ((a + b) / 2.0).trunc();
+        } else {
+            median = (a + b) / 2.0;
+        }
     } else {
-        median = (floats.len() / 2.0).floor();
+        median = v[v.len() / 2 as usize].try_into().map_err(|_| "Error converting to f64.")?;
     }
 
-    (median * 10.0).round() / 10.0
+    Ok(median)
 }
 
 fn main() {
-    assert_eq!(comp_median(vec![1, 2, 3, 4, 5, 6, 7, 8]), 4.5);
+    assert_eq!(comp_median(vec![1, 2, 3, 4, 5, 6, 7, 8]).unwrap(), 4.5);
 }

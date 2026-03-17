@@ -1,6 +1,6 @@
 fn main() {
-    let mut x = 5;
-    println!("The value of x is: {x}.");
-    x = 6;
-    println!("The value of x is: {x}.");
+    // Testing interger overflow.
+    let x: u8 = 256;
+    println!("Value of x is {x}");
+    // It throws an error, indicating that u8 variables shall be in the range of 0..=255.
 }

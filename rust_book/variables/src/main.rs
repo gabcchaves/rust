@@ -11,6 +11,6 @@ fn main() {
     // Now, let's try operating with variables of different types.
     let x: u8 = 10;
     let w: f32 = 2.5;
-    let r = x + w;
+    let r: f32 = x + w;
     println!("{r}");
 }

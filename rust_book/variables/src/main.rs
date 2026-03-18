@@ -47,7 +47,6 @@ fn main() {
 
 
     /* 4. Operações com tipos de dados diferentes.
-    */
     // Por que que o seguinte trecho não é compilado exitosamente?
     // Por que que o compilador não consegue inferir o tipo de z?
     let x: f32 = 2.0;
@@ -56,4 +55,17 @@ fn main() {
     println!("{}", std::any::type_name_of_val(&z));
     // Como emular a tipagem dinâmica no Rust?
     // Pode-se usar casting na variável cujo conjuto numérico é subconjunto do outro.
+    */
+
+    /* 5. Divisão de números inteiros.
+     * Qual é o comportamento do compilador do Rust ao tentar dividir números inteiros de modo a
+     * resultar em número de ponto flutuante?
+    */
+    let x = 5;
+    let y = 2;
+    let z = x / y;
+    println!("{}", z);
+    // O compilador realiza o truncamento do resultado, para preservar o tipo inteiro dos dois
+    // operandos.
+    println!("{}", std::any::type_name_of_val(&z));
 }

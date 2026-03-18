@@ -14,6 +14,7 @@ fn main() {
     //let r: f32 = x as f32 + w;
     //println!("{r}");
 
+    /*
     // 2. Qual tipo inteiro o compilador do Rust infere quando se inicializa uma variável inteira
     //    sem notação de tipo?
     let x = 42;
@@ -30,4 +31,17 @@ fn main() {
     // A solução, nesse caso, é definir o tipo de inteiro como i64.
     let z: i64 = 999999999999999;
     println!("{}", std::any::type_name_of_val(&z));
+    */
+
+
+    /*
+     * 3. Precisão do ponto flutuante.
+     */
+    // O compilador do Rust sempre infere o tipo f64, por algum motivo...
+    let x = 2.0;
+    println!("{}", std::any::type_name_of_val(&x));
+
+    // Para usar uma precisão menor, deve-se anotar o tipo específico.
+    let y: f32 = 2.0;
+    println!("{}", std::any::type_name_of_val(&y));
 }

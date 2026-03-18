@@ -71,7 +71,7 @@ fn main() {
 
     /* 6. Tipo booleano.
      *Teste das operações booleanas com variáveis desse tipo.
-     */
+     *
     let possui_chave: bool = true;
     let porta_aberta: bool = false;
     let pode_entrar: bool = possui_chave || porta_aberta;
@@ -87,4 +87,14 @@ fn main() {
     println!("Pode entrar? {}", {
         if pode_entrar { "Sim." } else { "Não." }
     });
+     */
+    
+    /* 7. Tipo caractere Unicode.
+     * Quantos bytes ocupa na memória?
+     * Suporta ASCII somente?
+     */
+    let c: char = '😀';
+    println!("Tamanho do caractere: {} bytes.", std::mem::size_of::<char>());
+    println!("Emoji: {}.", c);
+    // Em suma, sim, tipo char ocupa 4 bytes em memória e suporta emojis.
 }

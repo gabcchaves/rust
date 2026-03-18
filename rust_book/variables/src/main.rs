@@ -36,7 +36,6 @@ fn main() {
 
     /*
      * 3. Precisão do ponto flutuante.
-     */
     // O compilador do Rust sempre infere o tipo f64, por algum motivo...
     let x = 2.0;
     println!("{}", std::any::type_name_of_val(&x));
@@ -44,4 +43,17 @@ fn main() {
     // Para usar uma precisão menor, deve-se anotar o tipo específico.
     let y: f32 = 2.0;
     println!("{}", std::any::type_name_of_val(&y));
+    */
+
+
+    /* 4. Operações com tipos de dados diferentes.
+    */
+    // Por que que o seguinte trecho não é compilado exitosamente?
+    // Por que que o compilador não consegue inferir o tipo de z?
+    let x: f32 = 2.0;
+    let y: i32 = 2;
+    let z = x + y as f32;
+    println!("{}", std::any::type_name_of_val(&z));
+    // Como emular a tipagem dinâmica no Rust?
+    // Pode-se usar casting na variável cujo conjuto numérico é subconjunto do outro.
 }

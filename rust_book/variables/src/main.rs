@@ -60,7 +60,6 @@ fn main() {
     /* 5. Divisão de números inteiros.
      * Qual é o comportamento do compilador do Rust ao tentar dividir números inteiros de modo a
      * resultar em número de ponto flutuante?
-    */
     let x = 5;
     let y = 2;
     let z = x / y;
@@ -68,4 +67,24 @@ fn main() {
     // O compilador realiza o truncamento do resultado, para preservar o tipo inteiro dos dois
     // operandos.
     println!("{}", std::any::type_name_of_val(&z));
+    */
+
+    /* 6. Tipo booleano.
+     *Teste das operações booleanas com variáveis desse tipo.
+     */
+    let possui_chave: bool = true;
+    let porta_aberta: bool = false;
+    let pode_entrar: bool = possui_chave || porta_aberta;
+
+    println!("Possui chave? {}", {
+        if possui_chave { "Sim." } else { "Não." }
+    });
+
+    println!("A porta está aberta? {}", {
+        if porta_aberta { "Sim." } else { "Não." }
+    });
+
+    println!("Pode entrar? {}", {
+        if pode_entrar { "Sim." } else { "Não." }
+    });
 }

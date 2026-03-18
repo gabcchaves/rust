@@ -92,9 +92,19 @@ fn main() {
     /* 7. Tipo caractere Unicode.
      * Quantos bytes ocupa na memória?
      * Suporta ASCII somente?
-     */
     let c: char = '😀';
     println!("Tamanho do caractere: {} bytes.", std::mem::size_of::<char>());
     println!("Emoji: {}.", c);
     // Em suma, sim, tipo char ocupa 4 bytes em memória e suporta emojis.
+    */
+
+    /* 8. Diferença entre literais.
+     * Qual é diferença técnica entre as seguintes declarações?
+     */
+    let a = 'z';
+    let b = "z";
+    println!("{}", std::any::type_name_of_val(&a));
+    println!("{}", std::any::type_name_of_val(&b));
+    // Na realidade, a diferença é que a primeira variável é inicializada com um caractere, usando
+    // aspas simples, e a segunda variável, é inicializada com string, usando aspas duplas.
 }

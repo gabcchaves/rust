@@ -19,7 +19,17 @@
 // retorna algum valor.
 /* Por que não se pode atribuir uma intrução a outra instrução? [e.g.: let x = (let y = 10)]; */
 // Justamente pelo fato de que uma instrução não retorna um valor. Como não retorna valor, não se
-// pode atribuí-la uma outra instrução ou até mesmo a uma expressão.
+// pode atribuí-la uma outra instrução.
+
+/* 5. O bloco como expressão. */
+fn expression_block() {
+    let y = {
+        let x = 3;
+        x + 1 // Esta linha retorna o valor de x + 1, 4.
+    };
+    println!("{}", y);
+}
 
 fn main() {
+    expression_block();
 }

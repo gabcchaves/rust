@@ -58,14 +58,19 @@
 //}
 
 /* 11. Funçoes com expressões lógicas. */
-fn eh_par(n: i32) -> bool {
-    if n % 2 == 0 {
-        true
-    } else {
-        false
-    }
+//fn eh_par(n: i32) -> bool {
+//    if n % 2 == 0 {
+//        true
+//    } else {
+//        false
+//    }
+//}
+
+/* 12. Cálculo de área. */
+fn calcular_area_retangulo(largura: f64, altura: f64) -> f64 {
+    largura * altura
 }
 
 fn main() {
-    println!("{}", eh_par(8));
+    println!("Área do retângulo: {}", calcular_area_retangulo(10.0, 10.0));
 }

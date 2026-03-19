@@ -53,10 +53,19 @@
 //}
 
 /* 10. Retorno antecipado. */
-fn somar_um(x: i32) -> i32 {
-    return x + 1;
+//fn somar_um(x: i32) -> i32 {
+//    return x + 1;
+//}
+
+/* 11. Funçoes com expressões lógicas. */
+fn eh_par(n: i32) -> bool {
+    if n % 2 == 0 {
+        true
+    } else {
+        false
+    }
 }
 
 fn main() {
-    println!("{}", somar_um(7));
+    println!("{}", eh_par(8));
 }

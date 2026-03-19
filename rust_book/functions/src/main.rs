@@ -36,10 +36,15 @@
 //}
 
 /* 7. Operação de retorno. */
-fn somar_um(x: i32) -> i32 {
-    x + 1
+//fn somar_um(x: i32) -> i32 {
+//    x + 1
+//}
+
+/* 8. O erro do ponto e vírgula. */
+fn somar_dois(x: i32) -> i32 {
+    x + 2 // O retorno implícito não deve incluir ponto e vírgula.
 }
 
 fn main() {
-    println!("{}", somar_um(7));
+    println!("{}", somar_dois(7));
 }

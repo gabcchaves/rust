@@ -52,5 +52,11 @@
 //fn example_function() {
 //}
 
+/* 10. Retorno antecipado. */
+fn somar_um(x: i32) -> i32 {
+    return x + 1;
+}
+
 fn main() {
+    println!("{}", somar_um(7));
 }

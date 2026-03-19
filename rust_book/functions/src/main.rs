@@ -41,10 +41,16 @@
 //}
 
 /* 8. O erro do ponto e vírgula. */
-fn somar_dois(x: i32) -> i32 {
-    x + 2 // O retorno implícito não deve incluir ponto e vírgula.
-}
+//fn somar_dois(x: i32) -> i32 {
+//    x + 2 // O retorno implícito não deve incluir ponto e vírgula.
+//}
+
+/* 9. Snake Case */
+//fn exampleFunction() {
+//}
+//
+//fn example_function() {
+//}
 
 fn main() {
-    println!("{}", somar_dois(7));
 }

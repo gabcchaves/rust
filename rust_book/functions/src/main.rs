@@ -22,14 +22,19 @@
 // pode atribuí-la uma outra instrução.
 
 /* 5. O bloco como expressão. */
-fn expression_block() {
-    let y = {
-        let x = 3;
-        x + 1 // Esta linha retorna o valor de x + 1, 4.
-    };
-    println!("{}", y);
+//fn expression_block() {
+//    let y = {
+//        let x = 3;
+//        x + 1 // Esta linha retorna o valor de x + 1, 4.
+//    };
+//    println!("{}", y);
+//}
+
+/* 6. Valor de retorno básico. */
+fn cinco() -> i32 {
+    5
 }
 
 fn main() {
-    expression_block();
+    println!("{}", cinco());
 }

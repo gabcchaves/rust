@@ -31,10 +31,15 @@
 //}
 
 /* 6. Valor de retorno básico. */
-fn cinco() -> i32 {
-    5
+//fn cinco() -> i32 {
+//    5
+//}
+
+/* 7. Operação de retorno. */
+fn somar_um(x: i32) -> i32 {
+    x + 1
 }
 
 fn main() {
-    println!("{}", cinco());
+    println!("{}", somar_um(7));
 }

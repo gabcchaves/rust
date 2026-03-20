@@ -25,17 +25,26 @@
 /* 3. if em uma intrução let */
 // Considerando que if é uma expressão, então if retorna um valor e, portanto, pode ser usado em
 // uma instrução let.
-fn test() -> String {
-    let condicao: bool = true;
-    let resultado = if condicao {
-        String::from("Sim")
-    } else {
-        String::from("Não")
-    };
+//fn test() -> String {
+//    let condicao: bool = true;
+//    let resultado = if condicao {
+//        String::from("Sim")
+//    } else {
+//        String::from("Não")
+//    };
+//
+//    resultado
+//}
 
-    resultado
+/* 4. Incompatibilidade de tipos no if. */
+// O trecho de código a seguir não é possível de ser compilado por que envolve um retorno de dois
+// possíveis tipos de dados a uma única variável. A variável não é tupla e, portanto, não pode
+// receber diferentes tipos de dados.
+fn test() {
+    let condicao = true;
+    let numero = if condicao { 5 } else { "seis" };
 }
 
 fn main() {
-    println!("{}", test());
+    test();
 }

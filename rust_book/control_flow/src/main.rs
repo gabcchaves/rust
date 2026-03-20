@@ -40,9 +40,21 @@
 // O trecho de código a seguir não é possível de ser compilado por que envolve um retorno de dois
 // possíveis tipos de dados a uma única variável. A variável não é tupla e, portanto, não pode
 // receber diferentes tipos de dados.
+//fn test() {
+//    let condicao = true;
+//    let numero = if condicao { 5 } else { "seis" };
+//}
+
+/* 5. loop infinito com loop. */
 fn test() {
-    let condicao = true;
-    let numero = if condicao { 5 } else { "seis" };
+    let mut contador = 0;
+    loop {
+        contador = contador + 1;
+        println!("processando...");
+        if contador >= 5 {
+            break;
+        }
+    }
 }
 
 fn main() {

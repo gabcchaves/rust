@@ -103,9 +103,24 @@
 //}
 
 /* 10. O uso de rev() e ranges. */
+//fn test() {
+//    for number in (1..4).rev() {
+//        println!("{} ", number);
+//    }
+//}
+
+/* 11. Controle de fluxo e divisibilidade. */
 fn test() {
-    for number in (1..4).rev() {
-        println!("{} ", number);
+    for numero in 1..20 {
+        if numero % 3 == 0 {
+            if numero % 5 == 0 {
+                println!("FizzBuzz: \t{};", numero);
+            } else {
+                println!("Fizz: \t\t{:2};", numero);
+            }
+        } else if numero % 5 == 0 {
+            println!("Buzz: \t\t{:2};", numero);
+        }
     }
 }
 

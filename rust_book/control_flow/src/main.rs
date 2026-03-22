@@ -91,15 +91,22 @@
 //}
 
 /* 9. Percorrendo coleções com for. */
+//fn test() {
+//    let elementos = [10, 20, 30, 40, 50];
+//    for number in elementos {
+//        println!("{} ", number);
+//    }
+//    // For loop é considerado mais rápido porque não há necessidade de comparar o índice com o
+//    // comprimento do arranjo. Além de ser considerado mais rápido, o for loop é considerado mais
+//    // seguro, pois elimina a possibilidade de ultrapassar os limites inferior e superior do
+//    // arranjo.
+//}
+
+/* 10. O uso de rev() e ranges. */
 fn test() {
-    let elementos = [10, 20, 30, 40, 50];
-    for number in elementos {
+    for number in (1..4).rev() {
         println!("{} ", number);
     }
-    // For loop é considerado mais rápido porque não há necessidade de comparar o índice com o
-    // comprimento do arranjo. Além de ser considerado mais rápido, o for loop é considerado mais
-    // seguro, pois elimina a possibilidade de ultrapassar os limites inferior e superior do
-    // arranjo.
 }
 
 fn main() {

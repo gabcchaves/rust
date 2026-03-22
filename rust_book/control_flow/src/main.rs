@@ -58,14 +58,26 @@
 //}
 
 /* 6. Retornando valores de loops. */
-fn test() -> i32 {
-    let mut contador = 0;
-    loop {
-        contador = contador + 1;
-        if contador >= 10 {
-            break contador * 2
-        }
-    }
+//fn test() -> i32 {
+//    let mut contador = 0;
+//    loop {
+//        contador = contador + 1;
+//        if contador >= 10 {
+//            break contador * 2
+//        }
+//    }
+//}
+
+/* 7. Rótulos de laço. */
+#[allow(unreachable_code)]
+fn test() -> String {
+    'externo: loop {
+        loop {
+            break 'externo;
+        };
+        return String::from("Falha");
+    };
+    String::from("Êxito")
 }
 
 fn main() {

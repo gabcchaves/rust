@@ -69,17 +69,27 @@
 //}
 
 /* 7. Rótulos de laço. */
-#[allow(unreachable_code)]
-fn test() -> String {
-    'externo: loop {
-        loop {
-            break 'externo;
-        };
-        return String::from("Falha");
+//#[allow(unreachable_code)]
+//fn test() -> String {
+//    'externo: loop {
+//        loop {
+//            break 'externo;
+//        };
+//        return String::from("Falha");
+//    };
+//    String::from("Êxito")
+//}
+
+/* 8. Estrutura condicional com while. */
+fn test() {
+    let mut contador: u8 = 3;
+    while contador >= 1 {
+        println!("{}", contador);
+        contador = contador - 1;
     };
-    String::from("Êxito")
+    println!("Decolar!");
 }
 
 fn main() {
-    println!("{}", test());
+    test();
 }

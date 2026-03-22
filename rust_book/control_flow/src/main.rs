@@ -81,13 +81,25 @@
 //}
 
 /* 8. Estrutura condicional com while. */
+//fn test() {
+//    let mut contador: u8 = 3;
+//    while contador >= 1 {
+//        println!("{}", contador);
+//        contador = contador - 1;
+//    };
+//    println!("Decolar!");
+//}
+
+/* 9. Percorrendo coleções com for. */
 fn test() {
-    let mut contador: u8 = 3;
-    while contador >= 1 {
-        println!("{}", contador);
-        contador = contador - 1;
-    };
-    println!("Decolar!");
+    let elementos = [10, 20, 30, 40, 50];
+    for number in elementos {
+        println!("{} ", number);
+    }
+    // For loop é considerado mais rápido porque não há necessidade de comparar o índice com o
+    // comprimento do arranjo. Além de ser considerado mais rápido, o for loop é considerado mais
+    // seguro, pois elimina a possibilidade de ultrapassar os limites inferior e superior do
+    // arranjo.
 }
 
 fn main() {

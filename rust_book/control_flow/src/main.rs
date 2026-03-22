@@ -110,15 +110,29 @@
 //}
 
 /* 11. Controle de fluxo e divisibilidade. */
+//fn test() {
+//    for numero in 1..20 {
+//        if numero % 3 == 0 && numero % 5 == 0 {
+//            println!("FizzBuzz");
+//        } else if numero % 3 == 0 {
+//            println!("Fizz");
+//        } else if numero % 5 == 0 {
+//            println!("Buzz");
+//        }
+//    }
+//}
+
+/* 12. Lógica booleana no if. */
 fn test() {
-    for numero in 1..20 {
-        if numero % 3 == 0 && numero % 5 == 0 {
-            println!("FizzBuzz");
-        } else if numero % 3 == 0 {
-            println!("Fizz");
-        } else if numero % 5 == 0 {
-            println!("Buzz");
-        }
+    // Não compila; Rust não converte tipos para booleano:
+    //if 1 {
+    //    println!("Compila.");
+    //}
+    
+    // Verificar se número é diferente de zero.
+    let numero = 10;
+    if numero != 0 {
+        println!("Compila.");
     }
 }
 

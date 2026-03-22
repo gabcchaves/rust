@@ -112,14 +112,12 @@
 /* 11. Controle de fluxo e divisibilidade. */
 fn test() {
     for numero in 1..20 {
-        if numero % 3 == 0 {
-            if numero % 5 == 0 {
-                println!("FizzBuzz: \t{};", numero);
-            } else {
-                println!("Fizz: \t\t{:2};", numero);
-            }
+        if numero % 3 == 0 && numero % 5 == 0 {
+            println!("FizzBuzz");
+        } else if numero % 3 == 0 {
+            println!("Fizz");
         } else if numero % 5 == 0 {
-            println!("Buzz: \t\t{:2};", numero);
+            println!("Buzz");
         }
     }
 }

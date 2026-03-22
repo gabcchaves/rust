@@ -46,17 +46,28 @@
 //}
 
 /* 5. loop infinito com loop. */
-fn test() {
+//fn test() {
+//    let mut contador = 0;
+//    loop {
+//        contador = contador + 1;
+//        println!("processando...");
+//        if contador >= 5 {
+//            break;
+//        }
+//    }
+//}
+
+/* 6. Retornando valores de loops. */
+fn test() -> i32 {
     let mut contador = 0;
     loop {
         contador = contador + 1;
-        println!("processando...");
-        if contador >= 5 {
-            break;
+        if contador >= 10 {
+            break contador * 2
         }
     }
 }
 
 fn main() {
-    test();
+    println!("{}", test());
 }

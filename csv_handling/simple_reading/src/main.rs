@@ -23,6 +23,8 @@ fn open_file(path: String) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+
+#[allow(dead_code)]
 #[allow(unused_variables)]
 fn read_semicolon(path: String) -> Result<(), Box<dyn Error>> {
     // Leitura de arquivo CSV cujo separador é ';'.
@@ -39,8 +41,24 @@ fn read_semicolon(path: String) -> Result<(), Box<dyn Error>> {
 }
 
 
+#[allow(unused_variables)]
+fn read_ignore_headers(path: String) -> Result<(), Box<dyn Error>> {
+    // Ignorar cabeçalhos na leitura.
+    let mut rdr = ReaderBuilder::new()
+        .has_headers(false)
+        .from_path(path)?;
+
+    for result in rdr.records() {
+        let record = result?;
+        println!("{:?}", record);
+    }
+
+    Ok(())
+}
+
+
 fn main() {
-    let result = read_semicolon(String::from("foo2.csv"));
+    let result = read_ignore_headers(String::from("foo.csv"));
 
     // Tratamento de erro.
     match result {

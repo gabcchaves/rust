@@ -1,5 +1,5 @@
 *.swp
-target/
+**/target/
 dist/
 
 # Ignore executables without extension

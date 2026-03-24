@@ -14,13 +14,16 @@ use std::error::Error;
 fn open_csv() {
 //    let rdr = Reader::from_path("foo.csv");
     let mut wtr = Writer::from_path("foo.csv");
-    match wtr {
+    let mut handle = match wtr {
         Ok(file) => {
-            println!("Arquivo criado.");
             file
         },
         Err(error) => todo!(),
     };
+
+    handle.write_record(&["a", "b"]);
+
+
     //let _rdr_result = match rdr {
     //    Ok(file) => file,
     //    Err(error) => {

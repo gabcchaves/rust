@@ -59,6 +59,7 @@ fn read_ignore_headers(path: String) -> Result<(), Box<dyn Error>> {
 }
 
 
+#[allow(dead_code)]
 // Ler uma única linha.
 fn read_line(path: String) -> Result<(), Box<dyn Error>> {
     let mut rdr = Reader::from_path(path)?;
@@ -88,8 +89,23 @@ fn read_line(path: String) -> Result<(), Box<dyn Error>> {
 }
 
 
+// Contar número de colunas do arquivo.
+fn count_cols(path: String) -> Result<(), Box<dyn Error>> {
+    // Deve consultar apenas o cabeçalho.
+    let mut rdr = ReaderBuilder::new()
+        .has_headers(false)
+        .from_path(path)?;
+    let mut header_line = StringRecord::new();
+
+    rdr.read_record(&mut header_line)?;
+    println!("{:?} colunas.", header_line.len());
+
+    Ok(())
+}
+
+
 fn main() {
-    let result = read_line(String::from("foo.csv"));
+    let result = count_cols(String::from("foo.csv"));
 
     // Tratamento de erro.
     match result {

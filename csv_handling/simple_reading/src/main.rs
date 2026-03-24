@@ -10,13 +10,22 @@ use csv::Reader;
 
 #[allow(unused_variables)]
 fn open_file(path: String) -> Result<(), Box<dyn Error>> {
-    let rdr = Reader::from_path(path)?;
+    let mut rdr = Reader::from_path(path)?;
+    
+    // método records retorna iterador com os registros do arquivo.
+    for result in rdr.records() {
+        let record = result?;
+        println!("{:?}", record);
+    }
+
     Ok(())
 }
 
 
 fn main() {
     let result = open_file(String::from("foo.csv"));
+
+    // Tratamento de erro.
     match result {
         Ok(_file) => {
             println!("OK.");

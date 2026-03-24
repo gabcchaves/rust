@@ -11,7 +11,7 @@ use std::error::Error;
 // Writer //
 // - from_path()
 
-fn open_csv() {
+fn open_csv() -> Result<(), Box<dyn std::error::Error>> {
 //    let rdr = Reader::from_path("foo.csv");
     let mut wtr = Writer::from_path("foo.csv");
     let mut handle = match wtr {
@@ -21,8 +21,10 @@ fn open_csv() {
         Err(error) => todo!(),
     };
 
-    handle.write_record(&["a", "b"]);
+    handle.write_record(&["a", "b"])?;
+    handle.write_record(&["x", "y"])?;
 
+    Ok(())
 
     //let _rdr_result = match rdr {
     //    Ok(file) => file,

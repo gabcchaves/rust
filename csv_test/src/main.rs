@@ -1,6 +1,7 @@
 #![allow(unused)]
 use csv::Reader;
 use csv::Writer;
+use csv::StringRecord;
 use std::error::Error;
 
 
@@ -37,7 +38,7 @@ fn write_csv() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 
-fn read_csv() -> Result<(), Box<dyn std::error::Error>> {
+fn read_csv() -> Result<Vec<StringRecord>, Box<dyn std::error::Error>> {
     let mut rdr = Reader::from_path("foo.csv")?;
     let records = rdr.records();
 

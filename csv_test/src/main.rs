@@ -11,7 +11,7 @@ use std::error::Error;
 // Writer //
 // - from_path()
 
-fn open_csv() -> Result<(), Box<dyn std::error::Error>> {
+fn write_csv() -> Result<(), Box<dyn std::error::Error>> {
 //    let rdr = Reader::from_path("foo.csv");
     let mut wtr = Writer::from_path("foo.csv");
     let mut handle = match wtr {
@@ -36,6 +36,20 @@ fn open_csv() -> Result<(), Box<dyn std::error::Error>> {
     //};
 }
 
+
+fn read_csv() -> Result<(), Box<dyn std::error::Error>> {
+    let mut rdr = Reader::from_path("foo.csv")?;
+    let records = rdr.records();
+
+    for record in records {
+        println!("{:?}", record?);
+    }
+
+    Ok(())
+}
+
+
 fn main() {
-    open_csv();
+    write_csv();
+    read_csv();
 }
